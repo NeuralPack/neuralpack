@@ -15,6 +15,7 @@ init: ## Pull submodules (if needed) and install packages into .venv
 	python3 -m venv $(VENV)
 	$(PIP) install --upgrade pip -q
 	$(PIP) install -e neuralpack-tasks -e neuralpack-comms -e neuralpack-core
+	$(PIP) install pytest pytest-asyncio pytest-cov ruff mypy bandit -q
 	@echo ""
 	@echo "✓  Done. Activate with:  source $(VENV)/bin/activate"
 	@echo "   Then run:             make run"
