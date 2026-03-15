@@ -1,0 +1,23 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Sessions data — never commit session files
+sessions/
+
+# Env files
+.env
+.env.*
+!.env.example
+
+# Scaffold scripts — local only
+scaffold*.py
+SETUP.md
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,27 @@
+[submodule "neuralpack-core"]
+	path = neuralpack-core
+	url = https://github.com/NeuralPack/neuralpack-core.git
+[submodule "neuralpack-evals"]
+	path = neuralpack-evals
+	url = https://github.com/NeuralPack/neuralpack-evals.git
+[submodule "neuralpack-tasks"]
+	path = neuralpack-tasks
+	url = https://github.com/NeuralPack/neuralpack-tasks.git
+[submodule "neuralpack-infra"]
+	path = neuralpack-infra
+	url = https://github.com/NeuralPack/neuralpack-infra.git
+[submodule "neuralpack-comms"]
+	path = neuralpack-comms
+	url = https://github.com/NeuralPack/neuralpack-comms.git
+[submodule "neuralpack-ui"]
+	path = neuralpack-ui
+	url = https://github.com/NeuralPack/neuralpack-ui.git
+[submodule "neuralpack-skills"]
+	path = neuralpack-skills
+	url = https://github.com/NeuralPack/neuralpack-skills.git
+[submodule "neuralpack-tools"]
+	path = neuralpack-tools
+	url = https://github.com/NeuralPack/neuralpack-tools.git
+[submodule ".github"]
+	path = .github
+	url = https://github.com/NeuralPack/.github.git
