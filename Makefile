@@ -5,13 +5,20 @@ VENV       := .venv
 PYTHON     := $(VENV)/bin/python
 PIP        := $(VENV)/bin/pip
 SESSIONS   := sessions
+REPO_URL   := https://github.com/NeuralPack/neuralpack
 
 .DEFAULT_GOAL := help
 
 # ── bootstrap ─────────────────────────────────────────────────────────────────
 
+.PHONY: clone
+clone: ## Clone the repo + all submodules (run this once on a new machine)
+	git clone --recurse-submodules $(REPO_URL)
+	@echo ""
+	@echo "✓  Cloned. Now run:  cd neuralpack && make init"
+
 .PHONY: init
-init: ## Clone all submodules and install packages into .venv
+init: ## Pull submodules (if needed) and install packages into .venv
 	git submodule update --init --recursive
 	python3 -m venv $(VENV)
 	$(PIP) install --upgrade pip -q
