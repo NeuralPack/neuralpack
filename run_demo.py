@@ -24,6 +24,7 @@ for _repo in ("neuralpack-tasks", "neuralpack-comms", "neuralpack-core"):
 
 from connectors.base import InboundMessage                   # noqa: E402
 from connectors.cli import CLIConnector                      # noqa: E402
+from backend.file_backend import FileWorkflowBackend         # noqa: E402
 from gates.gate_handler import DefaultGateHandler            # noqa: E402
 from mocks.pipeline import MockPipeline                      # noqa: E402
 from models.gates import GATE_INFO                           # noqa: E402
@@ -86,8 +87,9 @@ async def run_demo() -> None:
                     _print_system(message)
 
         sender       = _Sender()
-        gate_handler = DefaultGateHandler(store, sender)
-        dispatcher   = MessageDispatcher(store, gate_handler=gate_handler)
+        backend      = FileWorkflowBackend(store)
+        gate_handler = DefaultGateHandler(backend, sender)
+        dispatcher   = MessageDispatcher(backend, gate_handler=gate_handler)
         pipeline     = MockPipeline(store, delay=0.4)   # fast for demo
         watcher      = PollingWatcher(store, interval=0.6)
 
